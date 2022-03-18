@@ -18,7 +18,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
   php -r "unlink('composer-setup.php');"
 
 COPY composer.json ${dir}
-# COPY composer.lock ${dir}
+COPY composer.lock ${dir}
 
 RUN php composer.phar update
 
